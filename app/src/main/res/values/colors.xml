@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/theme</color>
+    <color name="colorPrimaryDark">@color/theme</color>
+    <color name="colorAccent">@color/theme</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#040505</color>
+    <color name="black2">#222222</color>
+    <color name="black3">#444444</color>
+
+    <color name="theme">#e1203e</color>
+    <color name="theme_color">#ed4d67</color>
+    <color name="red_cherry">#7e0947</color>
+
+    <color name="border_color">#dddddd</color>
+    <color name="light_grey">#eeeeee</color>
+    <color name="greyishBrown">#999999</color>
+    <color name="brownish_grey">#666666</color>
+    <color name="dark_grey">#444444</color>
+    <color name="selected_purple">#7e0947</color>
+    <color name="cream_white">#f9f9f9</color>
+    <color name="transparent">#00000000</color>
+    <color name="line_color">#f2f2f2</color>
+
+
+    <color name="bg_green">#57b280</color>
+    <color name="bg_orange">#f48045</color>
+    <color name="bg_purple">#8665eb</color>
+    <color name="bg_darkgreen">#22bfa9</color>
+    <color name="tabunhighlight">#99ffffff</color>
+
+</resources>
