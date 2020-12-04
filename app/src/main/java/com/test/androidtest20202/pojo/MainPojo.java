@@ -1,16 +1,16 @@
 package com.test.androidtest20202.pojo;
 
+import com.test.androidtest20202.constant.DashboardType;
+
 public class MainPojo {
     private String title;
-    private String subtitle;
     private String image;
+    private DashboardType dashboardType;
 
-
-
-    public MainPojo(String title, String subtitle, String image) {
+    public MainPojo(String title, String image, DashboardType dashboardType) {
         this.title = title;
-        this.subtitle = subtitle;
         this.image = image;
+        this.dashboardType = dashboardType;
     }
 
     public String getTitle() {
@@ -21,19 +21,19 @@ public class MainPojo {
         this.title = title;
     }
 
-    public String getSubtitle() {
-        return subtitle;
-    }
-
-    public void setSubtitle(String subtitle) {
-        this.subtitle = subtitle;
-    }
-
     public String getImage() {
         return image;
     }
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public DashboardType getDashboardType() {
+        return dashboardType;
+    }
+
+    public void setDashboardType(DashboardType dashboardType) {
+        this.dashboardType = dashboardType;
     }
 }

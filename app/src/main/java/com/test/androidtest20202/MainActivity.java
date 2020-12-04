@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.test.androidtest20202.adapter.MainRecyclerAdapter;
+import com.test.androidtest20202.constant.DashboardType;
 import com.test.androidtest20202.pojo.MainPojo;
 
 import java.util.ArrayList;
@@ -16,7 +17,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.kimo.lib.faker.Faker;
 import io.kimo.lib.faker.component.text.NameComponent;
-import io.kimo.lib.faker.component.text.URLComponent;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,12 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mainPojos = new ArrayList<>();
         faker = Faker.with(MainActivity.this);
 
-        for(int i =0;i<10;i++){
-            NameComponent nameComponent = new NameComponent(MainActivity.this);
-            URLComponent urlComponent = new URLComponent(MainActivity.this);
-            MainPojo mainPojo = new MainPojo(nameComponent.title(),nameComponent.completeName(),urlComponent.avatar());
-            mainPojos.add(mainPojo);
-        }
+        createDataSet();
 
         mainRecyclerAdapter = new MainRecyclerAdapter(MainActivity.this,mainPojos);
 
@@ -51,5 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void createDataSet() {
+        NameComponent nameComponent = new NameComponent(MainActivity.this);
+        MainPojo mainPojo = new MainPojo(nameComponent.title(),nameComponent.completeName(), DashboardType.VIDEOVIEWPAGER);
+        mainPojos.add(mainPojo);
     }
 }
