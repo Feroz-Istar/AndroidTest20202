@@ -52,5 +52,9 @@ public class MainActivity extends AppCompatActivity {
         NameComponent nameComponent = new NameComponent(MainActivity.this);
         MainPojo mainPojo = new MainPojo(nameComponent.title(),nameComponent.completeName(), DashboardType.VIDEOVIEWPAGER);
         mainPojos.add(mainPojo);
+
+
+        MainPojo mainPojo1= new MainPojo(nameComponent.title(),nameComponent.completeName(), DashboardType.ANIMATEDBOTTOMBAR);
+        mainPojos.add(mainPojo1);
     }
 }

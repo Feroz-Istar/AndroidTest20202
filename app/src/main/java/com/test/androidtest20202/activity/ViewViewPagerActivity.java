@@ -36,20 +36,12 @@ public class ViewViewPagerActivity extends AppCompatActivity {
 
     private void createData() {
         videos = new ArrayList<>();
-        videos.add("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4");
-        videos.add("http://techslides.com/demos/sample-videos/small.mp4");
-        videos.add("https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4");
-        videos.add("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4");
-        videos.add("http://techslides.com/demos/sample-videos/small.mp4");
-        videos.add("https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4");
-        videos.add("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4");
-        videos.add("http://techslides.com/demos/sample-videos/small.mp4");
-        videos.add("https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4");
-        videos.add("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4");
-        videos.add("http://techslides.com/demos/sample-videos/small.mp4");
-        videos.add("https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4");
-        videos.add("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4");
-        videos.add("http://techslides.com/demos/sample-videos/small.mp4");
-        videos.add("https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4");
+        videos.add("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4");
+        videos.add("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4");
+
+
+
+        videos.add("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4");
+
     }
 }

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidTest20202</string>
+    <string name="home">home</string>
+    <string name="alarm">alarm</string>
+    <string name="bread">bread</string>
+    <string name="cart">cart</string>
+
 </resources>

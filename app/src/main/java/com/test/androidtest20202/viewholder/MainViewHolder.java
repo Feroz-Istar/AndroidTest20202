@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.test.androidtest20202.R;
+import com.test.androidtest20202.activity.AnimatedBottomBar;
 import com.test.androidtest20202.activity.ViewViewPagerActivity;
 import com.test.androidtest20202.pojo.MainPojo;
 
@@ -40,14 +41,24 @@ public class MainViewHolder extends RecyclerView.ViewHolder {
 
 
     public void bind(MainPojo mainPojo){
-        title.setText(mainPojo.getTitle());
+        title.setText(mainPojo.getDashboardType().name());
         Log.d("MainViewHolder",mainPojo.getImage());
         Glide.with(context).load(mainPojo.getImage()).into(image);
-        switch (mainPojo.getDashboardType()){
-            case VIDEOVIEWPAGER:
-                    context.startActivity(new Intent(context, ViewViewPagerActivity.class));
-                break;
-        }
+        items.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (mainPojo.getDashboardType()){
+                    case VIDEOVIEWPAGER:
+                        context.startActivity(new Intent(context, ViewViewPagerActivity.class));
+                        break;
+                    case ANIMATEDBOTTOMBAR:
+                        context.startActivity(new Intent(context, AnimatedBottomBar.class));
+
+                        break;
+                }
+            }
+        });
+
 
 
     }
