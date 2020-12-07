@@ -56,5 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         MainPojo mainPojo1= new MainPojo(nameComponent.title(),nameComponent.completeName(), DashboardType.ANIMATEDBOTTOMBAR);
         mainPojos.add(mainPojo1);
+
+        MainPojo mainPojo2= new MainPojo(nameComponent.title(),nameComponent.completeName(), DashboardType.TRANSLATOR);
+        mainPojos.add(mainPojo2);
     }
 }

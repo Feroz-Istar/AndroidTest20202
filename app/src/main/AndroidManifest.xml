@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTest20202"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.AnimatedBottomBar"></activity>
+        <activity android:name=".activity.TranslatorActivity"></activity>
+        <activity android:name=".activity.AnimatedBottomBar" />
         <activity android:name=".activity.ViewViewPagerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

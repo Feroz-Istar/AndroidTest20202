@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.test.androidtest20202.R;
 import com.test.androidtest20202.activity.AnimatedBottomBar;
+import com.test.androidtest20202.activity.TranslatorActivity;
 import com.test.androidtest20202.activity.ViewViewPagerActivity;
 import com.test.androidtest20202.pojo.MainPojo;
 
@@ -54,6 +55,9 @@ public class MainViewHolder extends RecyclerView.ViewHolder {
                     case ANIMATEDBOTTOMBAR:
                         context.startActivity(new Intent(context, AnimatedBottomBar.class));
 
+                        break;
+                    case TRANSLATOR:
+                        context.startActivity(new Intent(context, TranslatorActivity.class));
                         break;
                 }
             }
