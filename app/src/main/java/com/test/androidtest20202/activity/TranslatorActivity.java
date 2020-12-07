@@ -78,6 +78,9 @@ public class TranslatorActivity extends AppCompatActivity {
     @OnClick(R.id.submit)
     public void translate(){
         if(input.getText() != null && !input.getText().toString().trim().equalsIgnoreCase("")){
+            
+
+
             englishGermanTranslator.translate(input.getText().toString())
                     .addOnSuccessListener(
                             new OnSuccessListener<String>() {
