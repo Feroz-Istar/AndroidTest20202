@@ -78,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
 
         MainPojo mainPojo4= new MainPojo(DashboardType.IMAGETEXTRECOGINITION.name(),ic.avatar(), DashboardType.IMAGETEXTRECOGINITION);
         mainPojos.add(mainPojo4);
+
+
+
+        MainPojo mainPojo5= new MainPojo(DashboardType.FACEDETECTION.name(),ic.avatar(), DashboardType.FACEDETECTION);
+        mainPojos.add(mainPojo5);
     }
 
     public boolean requestAllpermission() {

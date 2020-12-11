@@ -60,6 +60,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-ml-natural-language-translate-model:20.0.8'
     implementation 'com.google.firebase:firebase-ml-natural-language-language-id-model:20.0.7'
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.1'
+    implementation 'com.google.android.gms:play-services-mlkit-face-detection:16.1.2'
     implementation 'com.android.support:multidex:1.0.3'
 
 }
