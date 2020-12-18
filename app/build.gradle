@@ -62,5 +62,6 @@ dependencies {
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.1'
     implementation 'com.google.android.gms:play-services-mlkit-face-detection:16.1.2'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
 }

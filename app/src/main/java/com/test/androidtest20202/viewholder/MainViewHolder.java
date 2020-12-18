@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.test.androidtest20202.R;
 import com.test.androidtest20202.activity.AnimatedBottomBar;
+import com.test.androidtest20202.activity.ChartActivity;
 import com.test.androidtest20202.activity.FaceDetectionActivity;
 import com.test.androidtest20202.activity.ImageTextRecognizer;
 import com.test.androidtest20202.activity.SmartReplyActivity;
@@ -70,6 +71,9 @@ public class MainViewHolder extends RecyclerView.ViewHolder {
                         break;
                     case FACEDETECTION:
                         context.startActivity(new Intent(context, FaceDetectionActivity.class));
+                        break;
+                    case CHART:
+                        context.startActivity(new Intent(context, ChartActivity.class));
                         break;
                 }
             }
