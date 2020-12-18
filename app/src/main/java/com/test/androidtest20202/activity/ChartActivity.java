@@ -49,7 +49,7 @@ public class ChartActivity extends AppCompatActivity implements OnChartValueSele
         chart.getDescription().setEnabled(false);
 
         // enable touch gestures
-        chart.setTouchEnabled(true);
+        chart.setTouchEnabled(false);
 
         // set listeners
         chart.setOnChartValueSelectedListener(this);
@@ -95,8 +95,8 @@ public class ChartActivity extends AppCompatActivity implements OnChartValueSele
        // yAxis.enableGridDashedLine(10f, 10f, 0f);
 
         // axis range
-        yAxis.setAxisMaximum(200f);
-        yAxis.setAxisMinimum(-50f);
+        //yAxis.setAxisMaximum(200f);
+        //yAxis.setAxisMinimum(-50f);
 
 
         chart.setViewPortOffsets(23,10,23,10);
@@ -108,11 +108,10 @@ public class ChartActivity extends AppCompatActivity implements OnChartValueSele
 
 
         chart.fitScreen();
-
-        //egend l = chart.getLegend();
+        Legend l = chart.getLegend();
 
         // draw legend entries as lines
-       // l.setForm(Legend.LegendForm.LINE);
+        l.setForm(Legend.LegendForm.LINE);
     }
 
     @Override
@@ -168,6 +167,7 @@ public class ChartActivity extends AppCompatActivity implements OnChartValueSele
             // black lines and points
             //set1.enableDashedLine(10f, 5f, 0f);
             set1.setColor(Color.parseColor("#ffa7b5"));
+           // set1.setDrawCircleHole(false);
 
 
             // line thickness and point size
@@ -175,8 +175,8 @@ public class ChartActivity extends AppCompatActivity implements OnChartValueSele
             set1.setCircleRadius(3f);
 
             // draw points as solid circles
-            set1.setDrawCircleHole(false);
-
+            set1.setDrawCircleHole(true);
+            set1.setCircleHoleRadius(2f);
             // customize legend entry
             set1.setFormLineWidth(1f);
             set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
@@ -213,6 +213,7 @@ public class ChartActivity extends AppCompatActivity implements OnChartValueSele
 
 
             set1.setCircleColors(colors);
+            set1.setCircleHoleColor(Color.parseColor("#ffffff"));
             set1.setFillColor(Color.parseColor("#ffa7b5" ));
             ArrayList<ILineDataSet> dataSets = new ArrayList<>();
             dataSets.add(set1); // add the data sets
@@ -225,5 +226,18 @@ public class ChartActivity extends AppCompatActivity implements OnChartValueSele
             chart.setData(data);
         }
     }
+    public  int lighten(int color, double fraction) {
+        int red = Color.red(color);
+        int green = Color.green(color);
+        int blue = Color.blue(color);
+        red = lightenColor(red, fraction);
+        green = lightenColor(green, fraction);
+        blue = lightenColor(blue, fraction);
+        int alpha = Color.alpha(color);
+        return Color.argb(alpha, red, green, blue);
+    }
 
+    private  int lightenColor(int color, double fraction) {
+        return (int) Math.min(color + (color * fraction), 255);
+    }
 }
