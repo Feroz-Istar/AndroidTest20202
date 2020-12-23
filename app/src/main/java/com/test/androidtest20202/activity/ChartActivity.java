@@ -1,16 +1,18 @@
 package com.test.androidtest20202.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
-import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
@@ -21,8 +23,9 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.Utils;
 import com.test.androidtest20202.R;
+import com.universalvideoview.UniversalMediaController;
+import com.universalvideoview.UniversalVideoView;
 
 import java.util.ArrayList;
 
@@ -34,6 +37,18 @@ public class ChartActivity extends AppCompatActivity implements OnChartValueSele
 
     @BindView(R.id.chart1)
      LineChart chart;
+
+    @BindView(R.id.videoView)
+    UniversalVideoView mVideoView;
+
+    @BindView(R.id.media_controller)
+
+    UniversalMediaController mMediaController;
+
+
+    @BindView(R.id.video_layout)
+
+    View mVideoLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +127,61 @@ public class ChartActivity extends AppCompatActivity implements OnChartValueSele
 
         // draw legend entries as lines
         l.setForm(Legend.LegendForm.LINE);
+
+
+        mVideoView.setMediaController(mMediaController);
+        mVideoView.setVideoURI(Uri.parse("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"));
+        mVideoView.setVideoViewCallback(new UniversalVideoView.VideoViewCallback() {
+            private boolean isFullscreen=false;
+            private int cachedHeight=200;
+
+            @Override
+            public void onScaleChange(boolean isFullscreen) {
+                this.isFullscreen = isFullscreen;
+                if (isFullscreen) {
+                    ViewGroup.LayoutParams layoutParams = mVideoLayout.getLayoutParams();
+                    layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
+                    layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT;
+                    mVideoLayout.setLayoutParams(layoutParams);
+                    //GONE the unconcerned views to leave room for video and controller
+                    //mBottomLayout.setVisibility(View.GONE);
+                } else {
+                    ViewGroup.LayoutParams layoutParams = mVideoLayout.getLayoutParams();
+                    layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
+                    layoutParams.height = this.cachedHeight;
+                    mVideoLayout.setLayoutParams(layoutParams);
+                  //  mBottomLayout.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onPause(MediaPlayer mediaPlayer) { // Video pause
+                //Log.d(TAG, "onPause UniversalVideoView callback");
+            }
+
+            @Override
+            public void onStart(MediaPlayer mediaPlayer) { // Video start/resume to play
+            //    Log.d(TAG, "onStart UniversalVideoView callback");
+            }
+
+            @Override
+            public void onBufferingStart(MediaPlayer mediaPlayer) {// steam start loading
+              //  Log.d(TAG, "onBufferingStart UniversalVideoView callback");
+            }
+
+            @Override
+            public void onBufferingEnd(MediaPlayer mediaPlayer) {// steam end loading
+               // Log.d(TAG, "onBufferingEnd UniversalVideoView callback");
+            }
+
+        });
+
+//        try {
+//            videoLayout.videoUrl("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4");
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
@@ -126,6 +196,10 @@ public class ChartActivity extends AppCompatActivity implements OnChartValueSele
 
 
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
 
     private void setData(int count, float range) {
 

@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTest20202"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.ChartActivity"></activity>
+        <activity android:name=".activity.ChartActivity"             android:configChanges="orientation|screenSize"
+            ></activity>
 
         <meta-data
             android:name="com.google.mlkit.vision.DEPENDENCIES"
