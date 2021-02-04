@@ -66,6 +66,7 @@ public class VideoViewFragment extends Fragment {
         });
         videoView.start();
 
+
         // error_subtitle.setText("No Completed Task Found.");
         return view;
 

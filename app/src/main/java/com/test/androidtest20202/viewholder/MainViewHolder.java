@@ -14,8 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.test.androidtest20202.R;
 import com.test.androidtest20202.activity.AnimatedBottomBar;
+import com.test.androidtest20202.activity.AudioVisualizerActivity;
 import com.test.androidtest20202.activity.ChartActivity;
 import com.test.androidtest20202.activity.FaceDetectionActivity;
+import com.test.androidtest20202.activity.HorizontalProgressBarActivity;
 import com.test.androidtest20202.activity.ImageTextRecognizer;
 import com.test.androidtest20202.activity.SmartReplyActivity;
 import com.test.androidtest20202.activity.TranslatorActivity;
@@ -74,6 +76,12 @@ public class MainViewHolder extends RecyclerView.ViewHolder {
                         break;
                     case CHART:
                         context.startActivity(new Intent(context, ChartActivity.class));
+                        break;
+                    case AUDIOVISUALIZER:
+                        context.startActivity(new Intent(context, AudioVisualizerActivity.class));
+                        break;
+                    case HORIZONTAL_PROGRESS:
+                        context.startActivity(new Intent(context, HorizontalProgressBarActivity.class));
                         break;
                 }
             }

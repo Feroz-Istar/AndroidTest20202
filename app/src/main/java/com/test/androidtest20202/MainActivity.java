@@ -87,6 +87,16 @@ public class MainActivity extends AppCompatActivity {
 
         MainPojo mainPojo6= new MainPojo(DashboardType.CHART.name(),ic.avatar(), DashboardType.CHART);
         mainPojos.add(mainPojo6);
+
+        MainPojo mainPojo7= new MainPojo(DashboardType.AUDIOVISUALIZER.name(),ic.avatar(), DashboardType.AUDIOVISUALIZER);
+        mainPojos.add(mainPojo7);
+
+
+
+
+
+        MainPojo mainPojo8= new MainPojo(DashboardType.HORIZONTAL_PROGRESS.name(),ic.avatar(), DashboardType.HORIZONTAL_PROGRESS);
+        mainPojos.add(mainPojo8);
     }
 
     public boolean requestAllpermission() {

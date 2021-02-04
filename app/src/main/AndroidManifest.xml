@@ -17,8 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTest20202"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.ChartActivity"             android:configChanges="orientation|screenSize"
-            ></activity>
+        <activity android:name=".activity.HorizontalProgressBarActivity"></activity>
+        <activity android:name=".activity.AudioVisualizerActivity" />
+        <activity
+            android:name=".activity.ChartActivity"
+            android:configChanges="orientation|screenSize" />
 
         <meta-data
             android:name="com.google.mlkit.vision.DEPENDENCIES"
@@ -28,7 +31,9 @@
         <activity android:name=".activity.SmartReplyActivity" />
         <activity android:name=".activity.TranslatorActivity" />
         <activity android:name=".activity.AnimatedBottomBar" />
-        <activity android:name=".activity.ViewViewPagerActivity" />
+        <activity
+            android:name=".activity.ViewViewPagerActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode" />
         <activity android:name=".activity.FaceDetectionActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -64,5 +64,5 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.linsea:universalvideoview:1.1.0@aar'
-
-}
+    implementation 'com.gauravk.audiovisualizer:audiovisualizer:0.9.2'
+   }
